@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+/* .frame{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+} */
+.frame1{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 0; */
+}
+.frame2{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 1; */
+}
+.frame3{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 2; */
+}
+.frame4{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 3; */
+}
+.frame5{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 4; */
+}
+.frame6{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 5; */
+}
+.frame7{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 5; */
+}
+.frame8{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 5; */
+}
+.frame9{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 5; */
+}
+.frame10{
+    position: absolute;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.2s ease;
+    /* z-index: 5; */
+}
+.image{
+    position: relative;
+    width: 250px;
+    height: 369px;
+    object-fit: cover;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image img{
+    width: 250px;
+    height: 300px;
+}
+/* .image video{
+    width: 250px;
+    height: 300px;
+} */
+h1{
+    text-align: center;
+    border: solid 1px black;
+    padding: 15px 0 15px 0;
+    margin: 0;
+    background-color: #fff;
+    width: 250px;
+}
