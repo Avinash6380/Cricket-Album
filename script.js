@@ -1,30 +1,47 @@
- // 1st frame.......!
- const frame1 = document.getElementById("frame1");
- // const text = document.getElementById("text");
+const frame1 = document.getElementById('frame1');
+let offsetX, offsetY; // Store the offset position of the cursor from the frame1
 
- let offsetX, offsetY;
+// Function to handle mouse down (start dragging)
+frame1.addEventListener('mousedown', startDrag);
+frame1.addEventListener('touchstart', startDrag); // For mobile
 
- frame1.addEventListener('dragstart', (e)=>{
-     offsetX = e.clientX - frame1.getBoundingClientRect().left;
-     offsetY = e.clientY - frame1.getBoundingClientRect().top;
-     console.log('working...');
+function startDrag(e) {
+    // Determine if it's a mouse or touch event
+    const isTouch = e.type === 'touchstart';
+    const clientX = isTouch ? e.touches[0].clientX : e.clientX;
+    const clientY = isTouch ? e.touches[0].clientY : e.clientY;
 
-     frame1.style.opacity = '0.5';
- })
+    // Calculate the mouse/touch offset from the frame1's top-left corner
+    offsetX = clientX - frame1.getBoundingClientRect().left;
+    offsetY = clientY - frame1.getBoundingClientRect().top;
 
+    // Add shadow effect when dragging starts
+    frame1.style.boxShadow = '10px 10px 25px rgba(0, 0, 0, 0.5)'; // Darker shadow
 
- frame1.addEventListener('drag', (e)=>{
-     if (e.clientX === 0 & e.clientY === 0)return;
+    // Set up a listener for the mouse/touch move event to drag the frame1
+    const moveHandler = (e) => {
+        const moveClientX = isTouch ? e.touches[0].clientX : e.clientX;
+        const moveClientY = isTouch ? e.touches[0].clientY : e.clientY;
+        // Update the frame1's position based on mouse/touch movement
+        frame1.style.left = `${moveClientX - offsetX}px`;
+        frame1.style.top = `${moveClientY - offsetY}px`;
+    };
 
-     frame1.style.left = `${e.clientX - offsetX}px`;
-     frame1.style.top = `${e.clientY - offsetY}px`;
-     console.log('testig...')
- })
+    // Set up a listener for the mouse/touch end event to stop dragging
+    const endDrag = () => {
+        // Remove the event listeners when the drag ends
+        document.removeEventListener(isTouch ? 'touchmove' : 'mousemove', moveHandler);
+        document.removeEventListener(isTouch ? 'touchend' : 'mouseup', endDrag);
 
- frame1.addEventListener('dragend', (e)=>{
-     frame1.style.opacity = '1';
-     console.log('done')
- })
+        // Remove the shadow when dragging ends
+        frame1.style.boxShadow = '5px 5px 15px rgba(0, 0, 0, 0.3)'; // Lighter shadow
+    };
+
+    // Attach the move and end event listeners to the document
+    document.addEventListener(isTouch ? 'touchmove' : 'mousemove', moveHandler);
+    document.addEventListener(isTouch ? 'touchend' : 'mouseup', endDrag);
+}
+
 
  // 2nd Frame............!
  const frame2 = document.getElementById("frame2");
