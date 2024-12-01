@@ -82,7 +82,7 @@ body{
     /* z-index: 5; */
 }
 .frame10{
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
     transition: box-shadow 0.2s ease;
@@ -101,6 +101,8 @@ body{
 .image img{
     width: 250px;
     height: 300px;
+    border: solid white 5px;
+    box-sizing: border-box;
 }
 /* .image video{
     width: 250px;
@@ -108,7 +110,7 @@ body{
 } */
 h1{
     text-align: center;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     padding: 15px 0 15px 0;
     margin: 0;
     background-color: #fff;
